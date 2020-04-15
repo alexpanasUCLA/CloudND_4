@@ -1,4 +1,5 @@
-<include a CircleCI status badge, here>
+
+[![alexpanasUCLA](https://circleci.com/gh/alexpanasUCLA/CloudND_4.svg?style=svg)](https://circleci.com/gh/alexpanasUCLA/CloudND_4)
 
 ## Project Overview
 
