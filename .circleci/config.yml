@@ -37,6 +37,4 @@ jobs:
           name: run lint
           command: |
             . venv/bin/activate
-            make setup
-            make install
             make lint
