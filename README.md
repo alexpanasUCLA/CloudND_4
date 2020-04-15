@@ -20,11 +20,13 @@ The projec goal is to take a working flask application that exposes API POST end
 * integrated GitHub with CircleCI to make a basic pipeline to lint the code 
 
 
-### Running `app.py`
+### Running `app.py` as a Docker container
 
-1. Standalone:  `python app.py`
-2. Run in Docker:  `./run_docker.sh`
-3. Run in Kubernetes:  `./run_kubernetes.sh`
+1. You can pull the docker image from DockerHub `docker pull dockerpanas/clound4nd:latest`
+   and run it as `docker run -p 8000:80 dockerpanas/clound4nd:latest`. The app accepts JSON payloads as POST requests at the 
+   `http://localhost:8000/predict`. 
+2. To run in Docker locally:  `./run_docker.sh` after you 
+3. Run in Kubernetes locally:  `./run_kubernetes.sh`
 
 ### Kubernetes Steps
 
