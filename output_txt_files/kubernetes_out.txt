@@ -1,1 +1,47 @@
 <paste log output from Kubernetes-mediated prediction, here>
+alexpanas@MacBook-Pro-de-Alex CloudND_4 % ./run_kubernetes.sh 
+deployment.apps/api created
+NAME                  READY   STATUS              RESTARTS   AGE
+api-f9576cd8c-vrqsn   0/1     ContainerCreating   0          0s
+error: unable to forward port because pod is not running. Current status=Pending
+Error from server (BadRequest): container "clound4nd" in pod "api-f9576cd8c-vrqsn" is waiting to start: ContainerCreating
+alexpanas@MacBook-Pro-de-Alex CloudND_4 % ./run_kubernetes.sh
+Error from server (AlreadyExists): deployments.apps "api" already exists
+NAME                  READY   STATUS    RESTARTS   AGE
+api-f9576cd8c-vrqsn   1/1     Running   0          14s
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+Handling connection for 8000
+Handling connection for 8000
+^C * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 231-779-307
+[2020-04-15 17:21:56,409] INFO in app: JSON payload: 
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2020-04-15 17:21:56,425] INFO in app: Inference payload DataFrame: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2020-04-15 17:21:56,435] INFO in app: Scaling Payload: %s
+ %   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2020-04-15 17:21:56,437] INFO in app: Prediction output: 
+[20.35373177134412]
+127.0.0.1 - - [15/Apr/2020 17:21:56] "POST /predict HTTP/1.1" 200 -
+[2020-04-15 17:22:57,706] INFO in app: JSON payload: 
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2020-04-15 17:22:57,717] INFO in app: Inference payload DataFrame: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2020-04-15 17:22:57,727] INFO in app: Scaling Payload: %s
+ %   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2020-04-15 17:22:57,730] INFO in app: Prediction output: 
+[20.35373177134412]
+127.0.0.1 - - [15/Apr/2020 17:22:57] "POST /predict HTTP/1.1" 200 -
+alexpanas@MacBook-Pro-de-Alex CloudND_4 % 

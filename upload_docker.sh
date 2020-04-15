@@ -6,7 +6,7 @@
 # Step 1:
 # Create dockerpath
 # dockerpath=<your docker ID/path>
-dockerpath='dockerpanas/cloundnd_4'
+dockerpath='dockerpanas/clound4nd'
 
 # Step 2:  
 # Authenticate & tag
