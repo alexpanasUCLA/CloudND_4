@@ -25,12 +25,18 @@ The projec goal is to take a working flask application that exposes API POST end
 1. You can pull the docker image from DockerHub `docker pull dockerpanas/clound4nd:latest`
    and run it as `docker run -p 8000:80 dockerpanas/clound4nd:latest`. The app accepts JSON payloads as POST requests at the 
    `http://localhost:8000/predict`. 
-2. To run in Docker locally:  `./run_docker.sh` after you 
-3. Run in Kubernetes locally:  `./run_kubernetes.sh`
+2. To run in Docker locally:  `./run_docker.sh` after you clone the files from `https://github.com/alexpanasUCLA/CloudND_4.git`
+3. Run in Kubernetes locally:  `./run_kubernetes.sh` after cloning. 
 
 ### Kubernetes Steps
 
 * Setup and Configure Docker locally
-* Setup and Configure Kubernetes locally
-* Create Flask app in Container
-* Run via kubectl
+* Setup and Configure Kubernetes locally by creating VM by minicube using VirtualBox. 
+* Use ./run_kubernetes.sh 
+* Check `kubectl version` 
+
+### Notes
+
+* pylint is installed by additing it to requirements.txt 
+* some changes made to Makefile to avoid formating clashes - namely `pylint --disable=R,C,W1203,W1202 app.py` W1202 is disabled. 
+* requirments.txt is edited for GitHub to avoid additonal intallations. Docker image built using provided requirments.txt 
